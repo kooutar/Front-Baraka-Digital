@@ -15,7 +15,7 @@
           </div>
 
           <!-- Formulaire -->
-          <form  class="space-y-6">
+          <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="space-y-6">
             <!-- Email -->
             <div>
               <label for="email" class="block text-sm font-medium text-neutral mb-2">
@@ -30,7 +30,7 @@
                 <input
                   type="email"
                   id="email"
-                  
+                  [(ngModel)]="formObject.email"
                   name="email"
                   required
                   class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200 outline-none"
@@ -53,7 +53,7 @@
                 <input
                 
                   id="password"
-                 
+                 [(ngModel)]="formObject.password"
                   name="password"
                   required
                   class="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-200 outline-none"
