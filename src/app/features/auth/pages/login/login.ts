@@ -36,20 +36,20 @@ isLoading = false;
     this.submitted=true;
     if(this.formGroup.valid){
       this.authApi.login(this.formGroup.value as LoginRequest).subscribe((response)=>{
-        
-        if(response.isSuccess){
-          this.RedirectToDashboard();
-        }
+       if (response.token) {
+    
+            this.redirectToDashboard();
+          }
         
       })
     }
   }
-  RedirectToDashboard(){
+  redirectToDashboard(){
     const role = localStorage.getItem('role');
     if(role=='ROLE_ADMIN'){
       this.router.navigate(['/admin/dashboard']);
     }
-    else if(role=='ROLE_USER'){
+    else if(role=='ROLE_CLIENT'){
       this.router.navigate(['/client/dashboard']);
     }
     else if(role=='ROLE_AGENT_BANCAIRE'){
