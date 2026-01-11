@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SidebarClient } from '../../../components/client/sidebar-client/sidebar-client';
 
 @Component({
@@ -8,5 +8,6 @@ import { SidebarClient } from '../../../components/client/sidebar-client/sidebar
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
+  
 
 }
