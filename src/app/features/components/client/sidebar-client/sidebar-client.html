@@ -1,26 +1,35 @@
-<div class="sidebar relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white h-screen w-64 flex flex-col p-6 shadow-2xl border-r border-gray-700/50">
+<div class="sidebar relative bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 text-white h-screen w-64 flex flex-col p-6 shadow-2xl border-r border-gray-700/50">
   <!-- Header avec effet glassmorphism -->
   <div class="mb-10 relative">
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl"></div>
-    <h2 class="text-3xl font-bold relative bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+    <div class="absolute inset-0 bg-linear-to-r from-blue-500/20 to-purple-500/20 blur-xl"></div>
+    <h2 class="text-3xl font-bold relative bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
       Client
     </h2>
-    <div class="h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2"></div>
+    <div class="h-1 w-16 bg-linear-to-r from-blue-500 to-purple-500 rounded-full mt-2"></div>
   </div>
 
   <nav class="flex flex-col gap-3 flex-1">
     <!-- Dashboard -->
     <a routerLink="/client/dashboard" routerLinkActive="active" 
-       class="sidebar-link group relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700">
+       class="sidebar-link group relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-linear-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700">
       <span class="relative z-10 flex items-center gap-3">
         <span class="w-2 h-2 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
         Dashboard
       </span>
     </a>
 
+
+    <a routerLink="/client/createAccount" routerLinkActive="active" 
+       class="sidebar-link group relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-linear-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700">
+      <span class="relative z-10 flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+        Cree compte bancaire
+      </span>
+    </a>
+
     <!-- Transactions Dropdown -->
     <div class="dropdown group">
-      <span class="sidebar-link cursor-pointer relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700 flex items-center justify-between">
+      <span class="sidebar-link cursor-pointer relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-linear-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700 flex items-center justify-between">
         <span class="flex items-center gap-3">
           <span class="w-2 h-2 rounded-full bg-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
           Transactions
@@ -47,7 +56,7 @@
 
     <!-- Mes transactions -->
     <a routerLink="/client/mes-transactions" routerLinkActive="active" 
-       class="sidebar-link group relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700">
+       class="sidebar-link group relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-linear-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700">
       <span class="relative z-10 flex items-center gap-3">
         <span class="w-2 h-2 rounded-full bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
         Mes transactions
@@ -56,7 +65,7 @@
 
     <!-- Documents Dropdown -->
     <div class="dropdown group">
-      <span class="sidebar-link cursor-pointer relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700 flex items-center justify-between">
+      <span class="sidebar-link cursor-pointer relative px-4 py-3 rounded-lg transition-all duration-300 hover:bg-linear-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:translate-x-1 border border-transparent hover:border-gray-700 flex items-center justify-between">
         <span class="flex items-center gap-3">
           <span class="w-2 h-2 rounded-full bg-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
           Documents
