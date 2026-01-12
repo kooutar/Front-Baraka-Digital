@@ -18,6 +18,7 @@ export class UserService {
     return {
       email: payload.sub,
       role: payload.role,
+      compte: { numeroCompte: '1234567890' } // Placeholder value
     };
    
 
