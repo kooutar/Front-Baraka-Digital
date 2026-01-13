@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
 export class HasAccount {
   
   private accountExists: boolean = false;
-  http = inject(HttpClient)
+  private  http = inject(HttpClient);
 
-  hasAccount():void  {
+  hasAccount():Boolean  {
 
     const response= this.http.get<boolean>('api/client/has-account');
     if(response){
         this.accountExists=true;
     }
-
+    return this.accountExists;
   }
   
 
