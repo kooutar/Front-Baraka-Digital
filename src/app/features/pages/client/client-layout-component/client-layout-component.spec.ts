@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Transaction } from './transaction';
+import { ClientLayoutComponent } from './client-layout-component';
 
-describe('Transaction', () => {
-  let component: Transaction;
-  let fixture: ComponentFixture<Transaction>;
+describe('ClientLayoutComponent', () => {
+  let component: ClientLayoutComponent;
+  let fixture: ComponentFixture<ClientLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Transaction]
+      imports: [ClientLayoutComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Transaction);
+    fixture = TestBed.createComponent(ClientLayoutComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

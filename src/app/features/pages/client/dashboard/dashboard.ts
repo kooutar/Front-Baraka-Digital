@@ -3,10 +3,12 @@ import { SidebarClient } from '../../../components/client/sidebar-client/sidebar
 import { User } from '../../../auth/models/response/user';
 import { UserService } from '../../../../core/services/user/user-service';
 import { HasAccount } from '../../../services/Account/has-account';
+import { R } from '@angular/cdk/keycodes';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [SidebarClient],
+  imports: [],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
