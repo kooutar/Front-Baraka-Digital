@@ -6,83 +6,16 @@
         <div class="text-center mb-8 relative">
             <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"></div>
             <h1 class="text-4xl font-bold relative bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                Effectuer un Dépôt
+                Effectuer un Retrait
             </h1>
-             <!-- Alert avec Tailwind -->
-                    <div *ngIf="alert.show" 
-                        class="fixed top-5 right-5 z-50 min-w-[300px] max-w-[500px] rounded-lg shadow-lg transform transition-all duration-300 ease-out animate-slide-in"
-                        [ngClass]="{
-                        'bg-green-50 border-l-4 border-green-500': alert.type === 'success',
-                        'bg-red-50 border-l-4 border-red-500': alert.type === 'error',
-                        'bg-yellow-50 border-l-4 border-yellow-500': alert.type === 'warning'
-                        }">
-                        
-                    
-                    <div class="flex items-center gap-3 p-4">
-                        <!-- Icon -->
-                        <div class="flex-shrink-0">
-                        <!-- Success Icon -->
-                        <svg *ngIf="alert.type === 'success'" 
-                            class="w-6 h-6 text-green-500" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        
-                        <!-- Error Icon -->
-                        <svg *ngIf="alert.type === 'error'" 
-                            class="w-6 h-6 text-red-500" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                        
-                        <!-- Warning Icon -->
-                        <svg *ngIf="alert.type === 'warning'" 
-                            class="w-6 h-6 text-yellow-500" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-                        </svg>
-                        </div>
-                        
-                        <!-- Message -->
-                        <span class="flex-1 text-sm font-medium"
-                            [ngClass]="{
-                                'text-green-800': alert.type === 'success',
-                                'text-red-800': alert.type === 'error',
-                                'text-yellow-800': alert.type === 'warning'
-                            }">
-                        {{ alert.message }}
-                        </span>
-                        
-                        <!-- Close Button -->
-                        <button (click)="hidenAlert()" 
-                                type="button"
-                                class="flex-shrink-0 rounded-lg p-1.5 inline-flex items-center justify-center transition-colors hover:bg-black/10">
-                        <svg class="w-5 h-5"
-                            [ngClass]="{
-                                'text-green-500': alert.type === 'success',
-                                'text-red-500': alert.type === 'error',
-                                'text-yellow-500': alert.type === 'warning'
-                            }"
-                            fill="currentColor" 
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                        </svg>
-                        </button>
-                    </div>
-                    </div>
-            
+           
+             <app-alert></app-alert>
             <div class="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
             
         </div>
 
         <!-- Formulaire -->
-        <form [formGroup]="fromGroup" (ngSubmit)="onSubmit()" class="glass-effect rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="glass-effect rounded-2xl p-8 shadow-2xl relative overflow-hidden">
             <!-- Effet de gradient en arrière-plan -->
             <div class="absolute inset-0 gradient-bg opacity-50"></div>
             
@@ -91,7 +24,7 @@
                 <div class="group">
                     <label for="montant" class="block text-sm font-medium text-gray-300 mb-2 flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-                        Montant à déposer
+                        Montant à retrait
                     </label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -129,7 +62,7 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                     </svg>
-                    <span>Déposer</span>
+                    <span>Retrait</span>
                     <svg class="w-5 h-5 arrow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
@@ -138,7 +71,7 @@
                 <!-- Info supplémentaire -->
                 <div class="pt-4 border-t border-gray-700/50">
                     <p class="text-xs text-gray-400 text-center">
-                        💡 Votre dépôt sera traité instantanément
+                        💡 Votre retrait sera traité instantanément
                     </p>
                 </div>
             </div>
@@ -156,7 +89,7 @@
                     <h3 class="text-sm font-semibold text-white mb-1">Informations importantes</h3>
                     <ul class="text-xs text-gray-400 space-y-1">
                         <li>• Transaction sécurisée et cryptée</li>
-                        <li>• Aucun frais de dépôt</li>
+                        <li>• Aucun frais de retrait</li>
                         <li>• Confirmation immédiate par email</li>
                     </ul>
                 </div>

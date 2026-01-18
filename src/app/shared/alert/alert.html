@@ -1,1 +1,13 @@
-<p>alert works!</p>
+<div *ngIf="alertService.alert$ | async as alert">
+
+    <div *ngIf="alert.show" class="p-4 rounded-md text-white mb-4"
+    [ngClass]="{
+        'bg-green-600': alert.type === 'success',
+         'bg-red-600': alert.type === 'error',
+         'bg-yellow-500': alert.type === 'warning' 
+    }"
+    >
+ {{alert.message}}
+    </div>
+
+</div>

@@ -6,6 +6,7 @@ import { authGuard } from './core/guards/auth-guard';
 import { Depot } from './features/pages/client/operation/depot/depot';
 import { ClientLayoutComponent } from './features/pages/client/client-layout-component/client-layout-component';
 import { Retrait } from './features/pages/client/operation/retrait/retrait';
+import { Virement } from './features/pages/client/operation/virement/virement';
 
 export const routes: Routes = [
 
@@ -28,6 +29,10 @@ export const routes: Routes = [
               {
                 path:'retrait',
                 component:Retrait
+              },
+               {
+                path:'verement',
+                component:Virement
               }
           
         ]
