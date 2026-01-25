@@ -13,8 +13,7 @@ export const authInterceptorInterceptor: HttpInterceptorFn = (req, next) => {
         Authorization:`Bearer ${token}`
       }
     });
-  }
-  return next(req).pipe(
+     return next(cloneReq).pipe(
     catchError((error: HttpErrorResponse)=>{
      if(error.status == 401){
       console.log(" 401 - utilisateur non connecte")
@@ -26,5 +25,7 @@ export const authInterceptorInterceptor: HttpInterceptorFn = (req, next) => {
      return throwError(()=>error);
     })
   )
+  }
+  return next(req)
   
 };

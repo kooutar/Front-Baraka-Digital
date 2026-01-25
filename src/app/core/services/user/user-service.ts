@@ -1,6 +1,7 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Inject, Injectable } from '@angular/core';
 import { Token } from '../token';
 import { User } from '../../../features/auth/models/response/user';
+import { HasAccount } from '../../../features/services/Account/has-account';
 
 
 
@@ -8,17 +9,19 @@ import { User } from '../../../features/auth/models/response/user';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(@Inject(Token) private token: Token) {}
-
+ private token=inject(Token);
+ 
+   
   getUserConected(): User | null {
     const payload = this.token.decodeToken();
     if (!payload) {
       return null;
     }
+     
     return {
       email: payload.sub,
       role: payload.role,
-      compte: { numeroCompte: '1234567890' } // Placeholder value
+     // Placeholder value
     };
    
 
